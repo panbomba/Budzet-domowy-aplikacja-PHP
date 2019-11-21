@@ -1,3 +1,104 @@
+<?php
+
+	session_start();
+	
+	if(isset($_POST['email']))
+	{
+		$wszystko_OK=true;
+		
+		$username = $_POST['username'];
+		
+		if ((strlen($username)<3) || (strlen($username)>50))
+		{
+			$wszystko_OK=false;
+			$_SESSION['e_username']="Nazwa użytkownika powinna zawierać pomiędzy  3 a 50 znaków!";
+		}
+		
+		//if(ctype_alnum($username)==false)
+		//{
+		//	$wszystko_OK=false;
+		//	$_SESSION['e_username']="Nazwa użytkownika powinna sie składać tylko z liter i cyfr";
+		//}		
+		
+		$email = $_POST['email'];
+		$emailsafe = filter_var($email, FILTER_SANITIZE_EMAIL);
+		
+		if((filter_var($emailsafe, FILTER_VALIDATE_EMAIL)==false) || ($emailsafe!=$email))
+		{
+			$wszystko_OK=false;	
+			$_SESSION['e_email']="Podaj poprawny adres e-mail!";			
+		}
+		
+		$haslo1 = $_POST['password'];
+		$haslo2 = $_POST['password2'];
+		
+		if((strlen($haslo1)<8) || (strlen($haslo1)>255))
+		{
+			$wszystko_OK=false;	
+			$_SESSION['e_password']="Hasło powinno mieć conajmniej 8 znaków!";					
+		}
+		
+		if($haslo1!=$haslo2)
+		{
+			$wszystko_OK=false;	
+			$_SESSION['e_password']="Podane hasła są różne!";						
+		}
+		
+		$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT);
+		
+		//zabezpieczenie przed duplikacja loginu
+		
+		require_once "connect.php";
+		mysqli_report(MYSQLI_REPORT_STRICT);
+		
+		try
+		{
+			$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+			if ($polaczenie->connect_errno!=0)
+			{
+				throw new Exception(mysqli_connect_errno());
+			}
+			else
+			{
+				//sprawdzenie bazy
+				$rezultat = $polaczenie->query("SELECT id FROM users WHERE email='$email'");
+				
+				if(!$rezultat) throw new Exception($polaczenie->error);
+				
+				$ile_takich_maili = $rezultat->num_rows;
+				if($ile_takich_maili>0)
+				{
+					$wszystko_OK=false;	
+					$_SESSION['e_email']="Uzytkownik o takim adresie email jest juz zarejestrowany!";						
+				}
+				if($wszystko_OK==true)
+				{
+					//wszystkie testy sie powiodly
+					//echo "Udana walidacja!"; exit();
+					
+					if($polaczenie->query("INSERT INTO users VALUES (NULL, '$username', '$haslo_hash', '$email')"))
+					{
+						$_SESSION['udanarejestracja']=true;
+						header('Location: logowanie.php');
+					}
+					else
+					{
+						throw new Exception($polaczenie->error);
+					}
+					
+				}
+				$polaczenie->close();
+			}
+		}
+		catch(Exception $e)
+		{
+			echo '<span style="color: red;">Błąd serwera!</span>';
+			//echo '<br>Informacja dev: '.$e;
+		}		
+	}
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -75,16 +176,43 @@
 						<h1>Rejestracja</h1>
 							<form action="rejestracja.php" method="post">
 								Imię <br>
-								<input type="text">
+								<input type="text" name="username">
+								<?php
+								
+									if (isset($_SESSION['e_username']))
+									{
+										echo '<div><span style="color: tomato">'.$_SESSION['e_username'].'</span></div>';
+										unset($_SESSION['e_username']);
+									}
+								
+								?>
 								<br><br>
 								e-mail <br>
-								<input type="email">
+								<input type="email" name="email">
+								<?php
+								
+									if (isset($_SESSION['e_email']))
+									{
+										echo '<div><span style="color: tomato">'.$_SESSION['e_email'].'</span></div>';
+										unset($_SESSION['e_email']);
+									}
+								
+								?>								
 								<br><br>
 								Hasło <br>
-								<input type="password">
+								<input type="password" name="password">
+								<?php
+								
+									if (isset($_SESSION['e_password']))
+									{
+										echo '<div><span style="color: tomato">'.$_SESSION['e_password'].'</span></div>';
+										unset($_SESSION['e_password']);
+									}
+								
+								?>									
 								<br><br>
 								Powtórz hasło <br>
-								<input type="password">
+								<input type="password" name="password2">
 								<br><br>								
 								<input type="submit" style="background-color: #5cb85c; color: white" value="Zarejestruj się!">
 							</form>								
