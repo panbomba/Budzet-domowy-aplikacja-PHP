@@ -137,7 +137,7 @@ body
 
 .logowanie
 {
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-left: auto;
 	margin-bottom: 100px;
 	margin-right: auto;
@@ -147,7 +147,7 @@ body
 
 .rejestracja
 {
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-left: auto;
 	margin-bottom: 100px;
 	margin-right: auto;
@@ -193,4 +193,11 @@ input
 .modal-dialog
 {
 	width: 400px;
+}
+
+.error
+{
+	color: red;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
