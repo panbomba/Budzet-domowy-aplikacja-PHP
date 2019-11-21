@@ -31,54 +31,20 @@
 	
 		<nav class="navbar navbar-expand-md bg-wlasne navbar-dark justify-content-center">
 		  <div class="container-fluid">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
-						<span class="navbar-toggler-icon "></span>
-					</button>
-					
-					<div class="collapse navbar-collapse justify-content-center" id="mainmenu">
-						<ul class="navbar-nav">
-							<li class="nav-item disabled">
-								<a class="nav-link disabled" href="#"><i class="icon-menu-outline"></i>Start  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-money-1"></i>Dodaj Przychód  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-shopping-bag"></i>Dodaj Wydatek  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-chart-line"></i>Bilans  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-cogs"></i>Ustawienia  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-logout"></i>Wyloguj się   </a> 
-							</li>
-						</ul>
-					</div>
 			</div>	
 		</nav>
-		
-			<section>
-				<div class="logowanie">
-					<article>
-						<p> <span style="color: tomato">Opcje menu dostępne są dla zalogowanych użytkowników. </span></p>
-					</article>
-				</div>
-			</section>
 				
 		<main>
 			
 				<div class="logowanie">
 					<article>
 						<h1>Logowanie</h1>
-								<form action="logowanie.php" method="post">
+								<form action="zaloguj.php" method="post">
 									e-mail <br>
-									<input type="email">
+									<input type="email" name="login">
 									<br><br>
 									Hasło <br>
-									<input type="password">
+									<input type="password" name="password">
 									<br><br>
 									<input type="submit" style="background-color: #5cb85c; color: white" value="Zaloguj się!">
 								</form>

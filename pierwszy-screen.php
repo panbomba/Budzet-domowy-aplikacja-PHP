@@ -1,3 +1,15 @@
+<?php
+
+	session_start();
+	
+	if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
+	{
+		header('Location: main-menu.php');
+		exit();
+	}
+	
+?>	
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -31,42 +43,10 @@
 	
 		<nav class="navbar navbar-expand-md bg-wlasne navbar-dark justify-content-center">
 		  <div class="container-fluid">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
-						<span class="navbar-toggler-icon "></span>
-					</button>
-					
-					<div class="collapse navbar-collapse justify-content-center" id="mainmenu">
-						<ul class="navbar-nav">
-							<li class="nav-item disabled">
-								<a class="nav-link disabled" href="#"><i class="icon-menu-outline"></i>Start  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-money-1"></i>Dodaj Przychód  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-shopping-bag"></i>Dodaj Wydatek  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-chart-line"></i>Bilans  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-cogs"></i>Ustawienia  </a> 
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#"><i class="icon-logout"></i>Wyloguj się   </a> 
-							</li>
-						</ul>
-					</div>
+
 			</div>	
 		</nav>
 		
-			<section>
-				<div class="logowanie">
-					<article>
-						<p> <span style="color: tomato">Opcje menu dostępne są dla zalogowanych użytkowników. </span></p>
-					</article>
-				</div>
-			</section>
 				
 		<main>
 			
@@ -77,11 +57,19 @@
 					<article>
 									<br><br>
 									<a href="rejestracja.php"><input type="button" style="background-color: #FF8800; color: white" value="Rejestracja"></a>
-					</article>						
-				</div>
-			
+					</article>
+						<?php
+							if(isset($_SESSION['blad']))
+							{
+								echo $_SESSION['blad'];
+							}	
+						?>
+					<article>
+					<br><br><br>
+					Tutaj jakies informacje o stronce
+					</article>		
+				</div>	
 		</main>
-		
 		
 		<footer class="fixed-bottom">
 				<div id="stopka">
