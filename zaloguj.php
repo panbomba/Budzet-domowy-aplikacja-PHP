@@ -19,10 +19,14 @@
 	{
 	$login = $_POST['login'];
 	$haslo = $_POST['password'];
-
-	$sql = "SELECT * FROM users WHERE email='$login' AND password ='$haslo'"; 
 	
-	if($rezultat = @$polaczenie->query($sql))
+	$login = htmlentities($login, ENT_QUOTES, "UTF-8");
+	$haslo = htmlentities($haslo, ENT_QUOTES, "UTF-8");	
+
+	if($rezultat = @$polaczenie->query(
+	sprintf("SELECT * FROM users WHERE email='%s' AND password ='%s'",
+	mysqli_real_escape_string($polaczenie,$login),
+	mysqli_real_escape_string($polaczenie,$haslo))))
 	{
 		$ilu_userow = $rezultat->num_rows;	
 		if($ilu_userow>0)
