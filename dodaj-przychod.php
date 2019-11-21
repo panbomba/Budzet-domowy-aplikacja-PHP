@@ -1,6 +1,12 @@
 <?php
 
 	session_start();
+
+	if(!isset($_SESSION['zalogowany']))
+	{
+		header('Location: pierwszy-screen.php');
+		exit();
+	}	
 	
 ?>	
 
@@ -66,7 +72,7 @@
 								</a>
 							</li>								
 							<li class="nav-item">
-								<a class="nav-link" href="logowanie.php"><i class="icon-logout"></i>Wyloguj się   </a> 
+								<a class="nav-link" href="wyloguj.php"><i class="icon-logout"></i>Wyloguj się   </a> 
 							</li>
 						</ul>
 					</div>

@@ -21,16 +21,21 @@
 		$ilu_userow = $rezultat->num_rows;	
 		if($ilu_userow>0)
 		{
+			$_SESSION['zalogowany'] = true;
+			
 			$wiersz = $rezultat->fetch_assoc();
+			$_SESSION['id'] = $wiersz['id'];
 			$_SESSION['user'] = $wiersz['username'];
 			
+			unset($_SESSION['blad']);
 			$rezultat->free_result(); 
 			header('Location: main-menu.php');
 
 		}
 		else
 		{
-			header('Location: logowanie.php');
+			$_SESSION['blad'] = '<span style="color: red">Nieprawidłowy login lub hasło! Zarejestruj się jeżeli nie posiadasz konta w serwisie.</span>';
+			header('Location: pierwszy-screen.php');
 		}
 	}
 		
