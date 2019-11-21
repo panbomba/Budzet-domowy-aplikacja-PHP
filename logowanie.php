@@ -73,12 +73,12 @@
 				<div class="logowanie">
 					<article>
 						<h1>Logowanie</h1>
-								<form action="logowanie.php" method="post">
+								<form action="zaloguj.php" method="post">
 									e-mail <br>
-									<input type="email">
+									<input type="email" name="login">
 									<br><br>
 									Hasło <br>
-									<input type="password">
+									<input type="password" name="password">
 									<br><br>
 									<input type="submit" style="background-color: #5cb85c; color: white" value="Zaloguj się!">
 								</form>

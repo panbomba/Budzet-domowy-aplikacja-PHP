@@ -1,3 +1,9 @@
+<?php
+
+	session_start();
+	
+?>	
+
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -52,6 +58,13 @@
 							<li class="nav-item">
 								<a class="nav-link" href="ustawienia.php"><i class="icon-cogs"></i>Ustawienia  </a> 
 							</li>
+							<li class="nav-item">
+								<a class="nav-link"><span style="color: #5cb85c"><i class="icon-user-1"></i>
+									<?php
+										echo $_SESSION['user'];
+									?></span>
+								</a>
+							</li>							
 							<li class="nav-item">
 								<a class="nav-link" href="logowanie.php"><i class="icon-logout"></i>Wyloguj się   </a> 
 							</li>
