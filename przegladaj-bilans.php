@@ -6,7 +6,11 @@
 	{
 		header('Location: pierwszy-screen.php');
 		exit();
-	}	
+	}
+
+	//unset($_SESSION['data_koncowa']);
+	//unset($_SESSION['data_poczatkowa']);
+	//unset($_SESSION['suma_wydatkow']);	
 	
 ?>	
 
@@ -108,15 +112,15 @@
 												<span aria-hidden="true">&times;</span>
 											</button>
 								  </div>
-								  <form action="daty.php" method="post">
+								  <form action="bilans.php" method="post">
 								  <div class="modal-body">
 										<label>Data początkowa<input type="date" name="start"></label>
 										<label>Data końcowa<input type="date" name="end"></label>
-								  </div>
-								  </form>
-								  <div class="modal-footer">
+								  </div>								  
+								  <div class="modal-footer">								  
 									<button type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
-									<button type="button" class="btn btn-success">Zapisz</button>
+									<button type="submit" value="4" name="okres" class="btn btn-success">Wybierz</button>
+									</form>
 								</div>
 								</div>
 							 </div>
@@ -126,28 +130,67 @@
 				<div class="row">			
 					<div class="col-md-6">
 						<div class = tile1>
-						Przychody
+						<h4><b>Przychody</b></h4>
 							<p>
-							Zestawienie wyswietli sie po zdefiniowaniu okresu przez uzytkownika.
-							Tutaj podsumowania itp test test test test test test
+							<?php
+							if(isset($_SESSION['data_poczatkowa']))
+							{
+								echo 'Od: '.$_SESSION['data_poczatkowa'];
+							}
+							if(isset($_SESSION['data_koncowa']))
+							{
+								echo '<br>Do: '.$_SESSION['data_koncowa'];
+							}
+							if(isset($_SESSION['suma_przychodow']))
+							{
+								echo  '<br><br><b>'.$_SESSION['suma_przychodow'].'</b>';
+							}
+							
+							?>							
 							</p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class = tile1>
-						Wydatki 
+						<h4><b>Wydatki</b></h4> 
 							<p>
-							Zestawienie wyswietli sie po zdefiniowaniu okresu przez uzytkownika.
-							Tutaj podsumowania itp test test test test test test
+							<?php
+							if(isset($_SESSION['data_poczatkowa']))
+							{
+								echo 'Od: '.$_SESSION['data_poczatkowa'];
+							}
+							if(isset($_SESSION['data_koncowa']))
+							{
+								echo '<br>Do: '.$_SESSION['data_koncowa'];
+							}
+							if(isset($_SESSION['suma_wydatkow']))
+							{
+								echo  '<br><br><b>'.$_SESSION['suma_wydatkow'].'</b>';
+							}
+							?>
 							</p>
 						</div>
 					</div>
 						
 					<div class="col-sm-12">
 						<div class = tile2>
-						Podsumowanie
+						<h4><b>Podsumowanie</b></h4>
 							<p>
-							Wyswietli sie po zdefiniowaniu okresu. Bedzie zawierac graf oraz zdanie podsumowania w zaleznosci od wyniku.
+							<?php
+							if(isset($_SESSION['bilans']))
+							{
+							if($_SESSION['bilans'] >= 0)
+							{
+								echo  '<br><b><span style="color: #5cb85c">'.$_SESSION['bilans'].'</span></b>';
+								echo '<br><span style="color: #5cb85c">Gratulacje. Świetnie zarządzasz finansami!</span>';
+							}
+							if($_SESSION['bilans'] < 0)
+							{
+								echo  '<br><b><span style="color: red">'.$_SESSION['bilans'].'</span></b>';
+								echo '<br><span style="color: red">Uważaj, wpadasz w długi!</span>';
+							}								
+							}		
+							?>							
 							</p>
 						</div>
 					</div>
