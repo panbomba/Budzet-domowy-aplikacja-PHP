@@ -14,12 +14,10 @@
 	$wiersz3 = $rezultat3->fetch_assoc();
 	$income_category_assigned_to_user_id = (int)  $wiersz3['id']; 
 	
-	//echo $user_id.'<br>';
-	//echo $income_category_assigned_to_user_id;
-	
 	$polaczenie->query ("INSERT INTO incomes VALUES (NULL, '$user_id', '$income_category_assigned_to_user_id', '$kwota', '$data_przychodu', '$komentarz')");
 			
 	$polaczenie->close();
+	header('Location: sukces.php');
 	
 	//informacja ze dodano pomyslnie i powrot do strony dodawania przychodu
 ?>	
