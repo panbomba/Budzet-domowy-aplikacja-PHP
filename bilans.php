@@ -4,7 +4,10 @@
 	require_once "connect.php";
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 
-	$okres = $_POST['okres']; 
+	$okres = $_POST['okres'];
+	$poczatek = $_POST['start'];
+	$koniec = $_POST['end'];
+	
 	if($okres==1)
 	{
 		$_SESSION['data_poczatkowa'] = date("Y-m-d", strtotime("first day of this month"));
@@ -22,7 +25,8 @@
 	}
 	if($okres==4)
 	{
-		;
+		$_SESSION['data_poczatkowa'] = $poczatek;
+		$_SESSION['data_koncowa'] = $koniec;
 	}	
 	
 	$user_id = $_SESSION['id'];
@@ -39,9 +43,6 @@
 	
 	$_SESSION['bilans'] = ($_SESSION['suma_przychodow'] - $_SESSION['suma_wydatkow']); 
 	
-
-	
-			
 	$polaczenie->close();
 	header('Location: przegladaj-bilans.php');
 	

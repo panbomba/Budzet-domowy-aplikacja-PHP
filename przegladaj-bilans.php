@@ -6,7 +6,11 @@
 	{
 		header('Location: pierwszy-screen.php');
 		exit();
-	}	
+	}
+
+	//unset($_SESSION['data_koncowa']);
+	//unset($_SESSION['data_poczatkowa']);
+	//unset($_SESSION['suma_wydatkow']);	
 	
 ?>	
 
@@ -108,15 +112,15 @@
 												<span aria-hidden="true">&times;</span>
 											</button>
 								  </div>
-								  <form action="daty.php" method="post">
+								  <form action="bilans.php" method="post">
 								  <div class="modal-body">
 										<label>Data początkowa<input type="date" name="start"></label>
 										<label>Data końcowa<input type="date" name="end"></label>
-								  </div>
-								  </form>
-								  <div class="modal-footer">
+								  </div>								  
+								  <div class="modal-footer">								  
 									<button type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
-									<button type="button" class="btn btn-success">Zapisz</button>
+									<button type="submit" value="4" name="okres" class="btn btn-success">Wybierz</button>
+									</form>
 								</div>
 								</div>
 							 </div>
@@ -129,9 +133,19 @@
 						<h4><b>Przychody</b></h4>
 							<p>
 							<?php
-							echo 'Od: '.$_SESSION['data_poczatkowa'];
-							echo '<br>Do: '.$_SESSION['data_koncowa'];
-							echo  '<br><br><b>'.$_SESSION['suma_przychodow'].'</b>';
+							if(isset($_SESSION['data_poczatkowa']))
+							{
+								echo 'Od: '.$_SESSION['data_poczatkowa'];
+							}
+							if(isset($_SESSION['data_koncowa']))
+							{
+								echo '<br>Do: '.$_SESSION['data_koncowa'];
+							}
+							if(isset($_SESSION['suma_przychodow']))
+							{
+								echo  '<br><br><b>'.$_SESSION['suma_przychodow'].'</b>';
+							}
+							
 							?>							
 							</p>
 						</div>
@@ -141,9 +155,18 @@
 						<h4><b>Wydatki</b></h4> 
 							<p>
 							<?php
-							echo 'Od: '.$_SESSION['data_poczatkowa'];
-							echo '<br>Do: '.$_SESSION['data_koncowa'];							
-							echo  '<br><br><b>'.$_SESSION['suma_wydatkow'].'</b>';
+							if(isset($_SESSION['data_poczatkowa']))
+							{
+								echo 'Od: '.$_SESSION['data_poczatkowa'];
+							}
+							if(isset($_SESSION['data_koncowa']))
+							{
+								echo '<br>Do: '.$_SESSION['data_koncowa'];
+							}
+							if(isset($_SESSION['suma_wydatkow']))
+							{
+								echo  '<br><br><b>'.$_SESSION['suma_wydatkow'].'</b>';
+							}
 							?>
 							</p>
 						</div>
@@ -154,7 +177,8 @@
 						<h4><b>Podsumowanie</b></h4>
 							<p>
 							<?php
-							
+							if(isset($_SESSION['bilans']))
+							{
 							if($_SESSION['bilans'] >= 0)
 							{
 								echo  '<br><b><span style="color: #5cb85c">'.$_SESSION['bilans'].'</span></b>';
@@ -164,8 +188,8 @@
 							{
 								echo  '<br><b><span style="color: red">'.$_SESSION['bilans'].'</span></b>';
 								echo '<br><span style="color: red">Uważaj, wpadasz w długi!</span>';
-							}
-							
+							}								
+							}		
 							?>							
 							</p>
 						</div>
