@@ -87,14 +87,14 @@
 								<form action="przychod.php" method="post">
 									<label> Kwota    <input type="number" step="0.01" name="kwota"></label>
 										<br><br>
-									<label>Data     <input type="date" name="kiedy"></label>
+									<label>Data     <input type="date" name="data_przychodu"></label>
 										<br><br>
 									<fieldset class="radio">
 										<legend>Kategoria</legend>
-											<div><label><input type="radio" value="1" name="przychod"> Wynagrodzenie</label></div>
-											<div><label><input type="radio" value="2" name="przychod"> Odsetki bankowe</label></div>
-											<div><label><input type="radio" value="3" name="przychod"> Zysk ze sprzedaży w internecie</label></div>
-											<div><label><input type="radio" value="4" name="przychod"> Inne</label></div>
+											<div><label><input type="radio" value="salary" name="przychod"> Wynagrodzenie</label></div>
+											<div><label><input type="radio" value="interest" name="przychod"> Odsetki bankowe</label></div>
+											<div><label><input type="radio" value="allegro" name="przychod"> Zysk ze sprzedaży w internecie</label></div>
+											<div><label><input type="radio" value="another" name="przychod"> Inne</label></div>
 									</fieldset>
 									<br>
 									<div><label for="komentarz">Dodatkowe komentarze</label></div>
