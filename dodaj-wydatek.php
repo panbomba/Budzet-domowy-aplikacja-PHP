@@ -92,30 +92,28 @@
 									<fieldset class="radio">
 										<legend>Kategoria</legend>
 										
-											<div><label><input type="radio" value="1" name="wydatek"> Jedzenie</label></div>
-											<div><label><input type="radio" value="2" name="wydatek"> Mieszkanie</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Transport</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Telekomunikacja</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Opieka zdrowotna</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Higiena</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Dzieci</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Rozrywka</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Wycieczka</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Szkolenia</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Książki</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Oszczędności</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Na złotą jesień, czyli emeryturę</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Spłata długów</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Darowizna</label></div>
-											<div><label><input type="radio" value="3" name="wydatek"> Inne wydatki</label></div>
+											<div><label><input type="radio" value="food" name="wydatek"> Jedzenie</label></div>
+											<div><label><input type="radio" value="apartments" name="wydatek"> Mieszkanie</label></div>
+											<div><label><input type="radio" value="transport" name="wydatek"> Transport</label></div>
+											<div><label><input type="radio" value="telecommunication" name="wydatek"> Telekomunikacja</label></div>
+											<div><label><input type="radio" value="health" name="wydatek"> Opieka zdrowotna</label></div>
+											<div><label><input type="radio" value="hygiene" name="wydatek"> Higiena</label></div>
+											<div><label><input type="radio" value="kids" name="wydatek"> Dzieci</label></div>
+											<div><label><input type="radio" value="recreation" name="wydatek"> Rozrywka</label></div>
+											<div><label><input type="radio" value="trip" name="wydatek"> Wycieczka</label></div>
+											<div><label><input type="radio" value="clothes" name="wydatek"> Ubrania</label></div>
+											<div><label><input type="radio" value="books" name="wydatek"> Książki</label></div>
+											<div><label><input type="radio" value="savings" name="wydatek"> Oszczędności</label></div>
+											<div><label><input type="radio" value="for retirement" name="wydatek"> Na złotą jesień, czyli emeryturę</label></div>
+											<div><label><input type="radio" value="debt repayment" name="wydatek"> Spłata długów</label></div>
+											<div><label><input type="radio" value="gift" name="wydatek"> Darowizna</label></div>
+											<div><label><input type="radio" value="another" name="wydatek"> Inne wydatki</label></div>
 									</fieldset>
 									<label for="okres">Sposób Płatności</label>
-										<select name="okres" id="okres">
-											<option value="go" selected>Gotówka</option>
-											<option value="pr">Przelew</option>
-											<option value="kd">Karta debetowa</option>
-											<option value="kk">Karta kredytowa</option>
-											<option value="in">Inna metoda płatności</option>
+										<select name="sposob" id="okres">
+											<option value="cash" selected>Gotówka</option>
+											<option value="debit card">Karta debetowa</option>
+											<option value="credit card">Karta kredytowa</option>
 										</select>
 									<br><br>
 									<div><label for="komentarz">Dodatkowe komentarze</label></div>

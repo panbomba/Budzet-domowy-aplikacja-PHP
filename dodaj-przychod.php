@@ -93,8 +93,8 @@
 										<legend>Kategoria</legend>
 											<div><label><input type="radio" value="1" name="przychod"> Wynagrodzenie</label></div>
 											<div><label><input type="radio" value="2" name="przychod"> Odsetki bankowe</label></div>
-											<div><label><input type="radio" value="3" name="przychod"> Zysk ze sprzedaży </label></div>
-											<div><label><input type="radio" value="3" name="przychod"> Inne</label></div>
+											<div><label><input type="radio" value="3" name="przychod"> Zysk ze sprzedaży w internecie</label></div>
+											<div><label><input type="radio" value="4" name="przychod"> Inne</label></div>
 									</fieldset>
 									<br>
 									<div><label for="komentarz">Dodatkowe komentarze</label></div>

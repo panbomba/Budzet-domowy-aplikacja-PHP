@@ -61,7 +61,8 @@
 			else
 			{
 				//sprawdzenie bazy
-				$rezultat = $polaczenie->query("SELECT id FROM users WHERE email='$email'");
+				$rezultat = $polaczenie->query("SELECT * FROM users WHERE email='$email'");
+				$wiersz = $rezultat->fetch_assoc();
 				
 				if(!$rezultat) throw new Exception($polaczenie->error);
 				
@@ -76,9 +77,14 @@
 					//wszystkie testy sie powiodly
 					//echo "Udana walidacja!"; exit();
 					
-					if($polaczenie->query("INSERT INTO users VALUES (NULL, '$username', '$haslo_hash', '$email')"))
+					if(($polaczenie->query("INSERT INTO users VALUES (NULL, '$username', '$haslo_hash', '$email')"))) 
 					{
+						$rezultat2 = $polaczenie->query("SELECT id FROM users WHERE email='$email'");
+						$wiersz2 = $rezultat2->fetch_assoc();
+						$new_user_id = (int) $wiersz2['id'];
+						$polaczenie->query ("INSERT INTO expenses_category_assigned_to_users (user_id, name) SELECT  '$new_user_id' AS user_id, `name` FROM expenses_category_default");
 						$_SESSION['udanarejestracja']=true;
+						
 						header('Location: logowanie.php');
 					}
 					else
