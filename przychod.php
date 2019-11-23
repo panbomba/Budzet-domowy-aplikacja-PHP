@@ -10,7 +10,7 @@
 	$komentarz = $_POST['komentarz']; 
 	
 	$user_id = $_SESSION['id'];
-	$rezultat3 = $polaczenie->query("SELECT * FROM incomes_category_assigned_to_users WHERE name='$kategoria_przychodu'");
+	$rezultat3 = $polaczenie->query("SELECT * FROM incomes_category_assigned_to_users WHERE name='$kategoria_przychodu' AND user_id='$user_id'");
 	$wiersz3 = $rezultat3->fetch_assoc();
 	$income_category_assigned_to_user_id = (int)  $wiersz3['id']; 
 	

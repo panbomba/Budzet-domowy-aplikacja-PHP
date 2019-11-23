@@ -11,11 +11,11 @@
 	$sposob_platnosci = $_POST['sposob'];
 	
 	$user_id = $_SESSION['id'];
-	$rezultat4 = $polaczenie->query("SELECT * FROM expenses_category_assigned_to_users WHERE name='$kategoria_wydatku'");
+	$rezultat4 = $polaczenie->query("SELECT * FROM expenses_category_assigned_to_users WHERE name='$kategoria_wydatku' AND user_id='$user_id'");
 	$wiersz4 = $rezultat4->fetch_assoc();
 	$expense_category_assigned_to_user_id = (int)  $wiersz4['id']; 
 	
-	$rezultat5 = $polaczenie->query("SELECT * FROM payment_methods_assigned_to_users WHERE name='$sposob_platnosci'");
+	$rezultat5 = $polaczenie->query("SELECT * FROM payment_methods_assigned_to_users WHERE name='$sposob_platnosci' AND user_id='$user_id'");
 	$wiersz5 = $rezultat5->fetch_assoc();	
 	$payment_method_assigned_to_user_id = (int)  $wiersz5['id']; 
 	
