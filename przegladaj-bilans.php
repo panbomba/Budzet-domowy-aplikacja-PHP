@@ -126,24 +126,24 @@
 				<div class="row">			
 					<div class="col-md-6">
 						<div class = tile1>
-						Przychody
+						<h4><b>Przychody</b></h4>
 							<p>
-							Zestawienie wyswietli sie po zdefiniowaniu okresu przez uzytkownika.
-							Tutaj podsumowania itp test test test test test test
 							<?php
-							echo  '<br>'.$_SESSION['suma_przychodow'];
+							echo 'Od: '.$_SESSION['data_poczatkowa'];
+							echo '<br>Do: '.$_SESSION['data_koncowa'];
+							echo  '<br><br><b>'.$_SESSION['suma_przychodow'].'</b>';
 							?>							
 							</p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class = tile1>
-						Wydatki 
+						<h4><b>Wydatki</b></h4> 
 							<p>
-							Zestawienie wyswietli sie po zdefiniowaniu okresu przez uzytkownika.
-							Tutaj podsumowania itp test test test test test test
 							<?php
-							echo  '<br>'.$_SESSION['suma_wydatkow'];
+							echo 'Od: '.$_SESSION['data_poczatkowa'];
+							echo '<br>Do: '.$_SESSION['data_koncowa'];							
+							echo  '<br><br><b>'.$_SESSION['suma_wydatkow'].'</b>';
 							?>
 							</p>
 						</div>
@@ -151,11 +151,21 @@
 						
 					<div class="col-sm-12">
 						<div class = tile2>
-						Podsumowanie
+						<h4><b>Podsumowanie</b></h4>
 							<p>
-							Wyswietli sie po zdefiniowaniu okresu. Bedzie zawierac graf oraz zdanie podsumowania w zaleznosci od wyniku.
 							<?php
-							echo  '<br>'.$_SESSION['bilans'];
+							
+							if($_SESSION['bilans'] >= 0)
+							{
+								echo  '<br><b><span style="color: #5cb85c">'.$_SESSION['bilans'].'</span></b>';
+								echo '<br><span style="color: #5cb85c">Gratulacje. Świetnie zarządzasz finansami!</span>';
+							}
+							if($_SESSION['bilans'] < 0)
+							{
+								echo  '<br><b><span style="color: red">'.$_SESSION['bilans'].'</span></b>';
+								echo '<br><span style="color: red">Uważaj, wpadasz w długi!</span>';
+							}
+							
 							?>							
 							</p>
 						</div>
