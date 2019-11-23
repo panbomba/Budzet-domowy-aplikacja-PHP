@@ -25,5 +25,4 @@
 	$polaczenie->close();
 	header('Location: sukces.php');
 	
-	//informacja ze dodano pomyslnie i powrot do strony dodawania przychodu
 ?>	

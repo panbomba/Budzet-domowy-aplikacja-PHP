@@ -89,10 +89,12 @@
 										Wybierz okres
 								</button>
 							 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-								<button class="dropdown-item" type="button">Bieżący miesiąc</button>
-								<button class="dropdown-item" type="button">Poprzedni miesiąc</button>
-								<button class="dropdown-item" type="button">Bieżący rok</button>
-								<button class="dropdown-item btn btn-primary" type="button" data-toggle="modal" data-target="#modal-daty">Okres niestandardowy</button>
+							 <form action="bilans.php" method="post">
+								<button class="dropdown-item" type="submit" name="okres" value="1">Bieżący miesiąc</button>
+								<button class="dropdown-item" type="submit" name="okres" value="2">Poprzedni miesiąc</button>
+								<button class="dropdown-item" type="submit" name="okres" value="3">Bieżący rok</button>
+								<button class="dropdown-item btn btn-primary" type="button" name="okres" data-toggle="modal" data-target="#modal-daty">Okres niestandardowy</button>
+								</form>
 							 </div>
 						</div>
 
