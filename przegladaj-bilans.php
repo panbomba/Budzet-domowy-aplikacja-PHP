@@ -130,6 +130,9 @@
 							<p>
 							Zestawienie wyswietli sie po zdefiniowaniu okresu przez uzytkownika.
 							Tutaj podsumowania itp test test test test test test
+							<?php
+							echo  '<br>'.$_SESSION['suma_przychodow'];
+							?>							
 							</p>
 						</div>
 					</div>
@@ -139,6 +142,9 @@
 							<p>
 							Zestawienie wyswietli sie po zdefiniowaniu okresu przez uzytkownika.
 							Tutaj podsumowania itp test test test test test test
+							<?php
+							echo  '<br>'.$_SESSION['suma_wydatkow'];
+							?>
 							</p>
 						</div>
 					</div>
@@ -148,6 +154,9 @@
 						Podsumowanie
 							<p>
 							Wyswietli sie po zdefiniowaniu okresu. Bedzie zawierac graf oraz zdanie podsumowania w zaleznosci od wyniku.
+							<?php
+							echo  '<br>'.$_SESSION['bilans'];
+							?>							
 							</p>
 						</div>
 					</div>

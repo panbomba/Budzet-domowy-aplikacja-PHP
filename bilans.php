@@ -27,11 +27,20 @@
 	
 	$user_id = $_SESSION['id'];
 	
-	//zapytanie o przychody z pomiedzy zadanych dat
-	//zapytanie o wydatki z pomiedzy zadanych dat
-	// roznica w bilansie plus komentarz
+	//przychody
+	$rezultat5 = $polaczenie->query("SELECT SUM(amount) FROM incomes WHERE date_of_income BETWEEN '$data_poczatkowa' AND '$data_koncowa' AND user_id = '$user_id'");
+	//wydatki
+	$rezultat6 = $polaczenie->query("SELECT SUM(amount) FROM expenses WHERE date_of_expense BETWEEN '$data_poczatkowa' AND '$data_koncowa' AND user_id = '$user_id'");
+	
+	$_SESSION['suma_przychodow'] = array_sum($rezultat5->fetch_assoc());
+	$_SESSION['suma_wydatkow'] = array_sum($rezultat6->fetch_assoc());
+	
+	$_SESSION['bilans'] = abs($_SESSION['suma_przychodow'] - $_SESSION['suma_wydatkow']); 
+	
+	// wszystko wydarzy sie na tej stronie i zostanie odeslane do strony z bilansem
 	
 			
 	$polaczenie->close();
+	header('Location: przegladaj-bilans.php');
 	
 ?>	
