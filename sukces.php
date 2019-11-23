@@ -6,7 +6,7 @@
 	{
 		header('Location: pierwszy-screen.php');
 		exit();
-	}	
+	}
 	
 ?>	
 
@@ -37,7 +37,7 @@
 		<div id="logo-strony">
 			moje finan$e<i class="icon-money"></i>
 				<br>
-			<div id="cytat"><i>Internetowa aplikacja do zarządzania finansami!</i></div>
+			<div id="cytat">Internetowa aplikacja do zarządzania finansami!</div>
 		</div>
 	</header>
 	
@@ -49,13 +49,13 @@
 					
 					<div class="collapse navbar-collapse justify-content-center" id="mainmenu">
 						<ul class="navbar-nav">
-							<li class="nav-item">
+							<li class="nav-item active">
 								<a class="nav-link" href="main-menu.php"><i class="icon-menu-outline"></i>Start  </a> 
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="dodaj-przychod.php"><i class=" icon-money-1"></i>Dodaj Przychód  </a> 
+								<a class="nav-link" href="dodaj-przychod.php"><i class="icon-money-1"></i>Dodaj Przychód  </a> 
 							</li>
-							<li class="nav-item active">
+							<li class="nav-item">
 								<a class="nav-link" href="dodaj-wydatek.php"><i class="icon-shopping-bag"></i>Dodaj Wydatek  </a> 
 							</li>
 							<li class="nav-item">
@@ -70,7 +70,7 @@
 										echo $_SESSION['user'];
 									?></span>
 								</a>
-							</li>								
+							</li>							
 							<li class="nav-item">
 								<a class="nav-link" href="wyloguj.php"><i class="icon-logout"></i>Wyloguj się   </a> 
 							</li>
@@ -81,58 +81,17 @@
 		
 		<main>
 			<section>
-				<div class="wydatek">
-
-						<h1>Dodaj wydatek</h1>
-								<form action="wydatek.php" method="post">
-									<label> Kwota    <input type="number" step="0.01" name="kwota"></label>
-										<br><br>
-									<label>Data     <input type="date" name="data_wydatku"></label>
-										<br><br>
-									<fieldset class="radio">
-										<legend>Kategoria</legend>
-										
-											<div><label><input type="radio" value="food" name="wydatek"> Jedzenie</label></div>
-											<div><label><input type="radio" value="apartments" name="wydatek"> Mieszkanie</label></div>
-											<div><label><input type="radio" value="transport" name="wydatek"> Transport</label></div>
-											<div><label><input type="radio" value="telecommunication" name="wydatek"> Telekomunikacja</label></div>
-											<div><label><input type="radio" value="health" name="wydatek"> Opieka zdrowotna</label></div>
-											<div><label><input type="radio" value="hygiene" name="wydatek"> Higiena</label></div>
-											<div><label><input type="radio" value="kids" name="wydatek"> Dzieci</label></div>
-											<div><label><input type="radio" value="recreation" name="wydatek"> Rozrywka</label></div>
-											<div><label><input type="radio" value="trip" name="wydatek"> Wycieczka</label></div>
-											<div><label><input type="radio" value="clothes" name="wydatek"> Ubrania</label></div>
-											<div><label><input type="radio" value="books" name="wydatek"> Książki</label></div>
-											<div><label><input type="radio" value="savings" name="wydatek"> Oszczędności</label></div>
-											<div><label><input type="radio" value="for retirement" name="wydatek"> Na złotą jesień, czyli emeryturę</label></div>
-											<div><label><input type="radio" value="debt repayment" name="wydatek"> Spłata długów</label></div>
-											<div><label><input type="radio" value="gift" name="wydatek"> Darowizna</label></div>
-											<div><label><input type="radio" value="another" name="wydatek"> Inne wydatki</label></div>
-									</fieldset>
-									<label for="okres">Sposób Płatności</label>
-										<select name="sposob" id="okres">
-											<option value="cash" selected>Gotówka</option>
-											<option value="debit card">Karta debetowa</option>
-											<option value="credit card">Karta kredytowa</option>
-										</select>
-									<br><br>
-									<div><label for="komentarz">Dodatkowe komentarze</label></div>
-										<textarea name="komentarz" id="komentarz" rows="4" cols="50"> </textarea>
-								<br><br>
-								<input type="submit" style="background-color: #5cb85c; color: white" value="Dodaj wydatek">
-								<br><br>
-								<input type="reset" style="background-color: orange; color: white" value="Anuluj">
-
-	</form>
-
+				<div class="artykul-main">
+					<h4><b><span style="color: #5cb85c">TRANSAKCJA DODANA POMYŚLNIE!</span></b></h4>
 				</div>
 			</section>
 		</main>
+		
 		<footer class="fixed-bottom">
 				<div id="stopka">
 					moje finan$e<i class="icon-money"></i> 2019 &copy; Maciej Bombik  <i class="icon-mail-alt"></i> maciej.bombik.programista@gmail.com
 				</div>
-		</footer>
+		</footer>	
 		
 		
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
