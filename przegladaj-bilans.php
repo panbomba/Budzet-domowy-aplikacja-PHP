@@ -114,8 +114,8 @@
 								  </div>
 								  <form action="bilans.php" method="post">
 								  <div class="modal-body">
-										<label>Data początkowa<input type="date" name="start"></label>
-										<label>Data końcowa<input type="date" name="end"></label>
+										<label>Data początkowa <input type="date" name="start"></label>
+										<label>Data końcowa <input type="date" name="end"></label>
 								  </div>								  
 								  <div class="modal-footer">								  
 									<button type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
@@ -143,7 +143,7 @@
 							}
 							if(isset($_SESSION['suma_przychodow']))
 							{
-								echo  '<br><br><b>'.$_SESSION['suma_przychodow'].'</b>';
+								echo  '<br><br><b>'.number_format($_SESSION['suma_przychodow'], 2).'</b>';
 							}
 							
 							?>							
@@ -165,7 +165,7 @@
 							}
 							if(isset($_SESSION['suma_wydatkow']))
 							{
-								echo  '<br><br><b>'.$_SESSION['suma_wydatkow'].'</b>';
+								echo  '<br><br><b>'.number_format($_SESSION['suma_wydatkow'], 2).'</b>';
 							}
 							?>
 							</p>
@@ -181,12 +181,12 @@
 							{
 							if($_SESSION['bilans'] >= 0)
 							{
-								echo  '<br><b><span style="color: #5cb85c">'.$_SESSION['bilans'].'</span></b>';
+								echo  '<br><b><span style="color: #5cb85c">+'.number_format($_SESSION['bilans'], 2).'</span></b>';
 								echo '<br><span style="color: #5cb85c">Gratulacje. Świetnie zarządzasz finansami!</span>';
 							}
 							if($_SESSION['bilans'] < 0)
 							{
-								echo  '<br><b><span style="color: red">'.$_SESSION['bilans'].'</span></b>';
+								echo  '<br><b><span style="color: red">'.number_format($_SESSION['bilans'], 2).'</span></b>';
 								echo '<br><span style="color: red">Uważaj, wpadasz w długi!</span>';
 							}								
 							}		

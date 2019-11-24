@@ -169,7 +169,7 @@ input
 {
 	width: 100%;
 	min-width: 230px;
-	height: 500px;
+	height: 400px;
 	background-color: #dddddd;
 	text-align: center;
 	padding: 10px;
@@ -197,6 +197,6 @@ input
 
 .modal-dialog
 {
-	width: 400px;
+	width: 300px;
 }
 
