@@ -49,13 +49,13 @@
 	
 	while ($wiersz7 = $rezultat7->fetch_assoc())
 	{
-		$kategorie_przychodow= '<b>'.$wiersz7['income_category_assigned_to_user_id'].' : </b>'.$wiersz7['amount'].'<br>';
+		$kategorie_przychodow= '<b>'.$wiersz7['income_category_assigned_to_user_id'].' : </b>'.$wiersz7['SUM(amount)'].'<br>';
 		$_SESSION['przychody_kategorie']  .=$kategorie_przychodow;	
 	}
 	
 	while ($wiersz8 = $rezultat8->fetch_assoc())
 	{
-		$kategorie_wydatkow= '<b>'.$wiersz8['expense_category_assigned_to_user_id'].' : </b>'.$wiersz8['amount'].'<br>';
+		$kategorie_wydatkow= '<b>'.$wiersz8['expense_category_assigned_to_user_id'].' : </b>'.$wiersz8['SUM(amount)'].'<br>';
 		$_SESSION['wydatki_kategorie']  .=$kategorie_wydatkow;	
 	}
 	
