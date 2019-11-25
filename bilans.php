@@ -49,13 +49,19 @@
 	
 	while ($wiersz7 = $rezultat7->fetch_assoc())
 	{
-		$kategorie_przychodow= '<b>'.$wiersz7['income_category_assigned_to_user_id'].' : </b>'.$wiersz7['SUM(amount)'].'<br>';
+		$numer_kategori_przychodow = (int)$wiersz7['income_category_assigned_to_user_id'];
+		$kategoria = $polaczenie->query("SELECT * FROM incomes_category_assigned_to_users WHERE id = '$numer_kategori_przychodow' AND user_id = '$user_id'");
+		$wiersz9 = $kategoria->fetch_assoc();
+		$kategorie_przychodow= '<b>'.$wiersz9['name'].' : </b>'.$wiersz7['SUM(amount)'].'<br>';
 		$_SESSION['przychody_kategorie']  .=$kategorie_przychodow;	
 	}
 	
 	while ($wiersz8 = $rezultat8->fetch_assoc())
 	{
-		$kategorie_wydatkow= '<b>'.$wiersz8['expense_category_assigned_to_user_id'].' : </b>'.$wiersz8['SUM(amount)'].'<br>';
+		$numer_kategori_wydatkow = (int)$wiersz8['expense_category_assigned_to_user_id'];
+		$kategoria = $polaczenie->query("SELECT * FROM expenses_category_assigned_to_users WHERE id = '$numer_kategori_wydatkow' AND user_id = '$user_id'");
+		$wiersz10 = $kategoria->fetch_assoc();
+		$kategorie_wydatkow= '<b>'.$wiersz10['name'].' : </b>'.$wiersz8['SUM(amount)'].'<br>';
 		$_SESSION['wydatki_kategorie']  .=$kategorie_wydatkow;	
 	}
 	
