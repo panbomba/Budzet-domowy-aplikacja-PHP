@@ -141,10 +141,18 @@
 							{
 								echo '<br>Do: '.$_SESSION['data_koncowa'];
 							}
+							if(isset($_SESSION['przychody_kategorie']))
+							{
+								echo  '<br><br>'.$_SESSION['przychody_kategorie'];
+								unset ($_SESSION['przychody_kategorie']);
+							}			
 							if(isset($_SESSION['suma_przychodow']))
 							{
 								echo  '<br><br><b>'.number_format($_SESSION['suma_przychodow'], 2).'</b>';
+								unset ($_SESSION['suma_przychodow']);
 							}
+							unset ($_SESSION['data_poczatkowa']);
+							unset ($_SESSION['data_koncowa']);
 							
 							?>							
 							</p>
@@ -163,10 +171,18 @@
 							{
 								echo '<br>Do: '.$_SESSION['data_koncowa'];
 							}
+							if(isset($_SESSION['wydatki_kategorie']))
+							{
+								echo  '<br><br>'.$_SESSION['wydatki_kategorie'];
+								unset ($_SESSION['wydatki_kategorie']);
+							}								
 							if(isset($_SESSION['suma_wydatkow']))
 							{
 								echo  '<br><br><b>'.number_format($_SESSION['suma_wydatkow'], 2).'</b>';
+								unset ($_SESSION['suma_wydatkow']);
 							}
+							unset ($_SESSION['data_poczatkowa']);
+							unset ($_SESSION['data_koncowa']);							
 							?>
 							</p>
 						</div>
@@ -188,8 +204,11 @@
 							{
 								echo  '<br><b><span style="color: red">'.number_format($_SESSION['bilans'], 2).'</span></b>';
 								echo '<br><span style="color: red">Uważaj, wpadasz w długi!</span>';
-							}								
 							}		
+								unset ($_SESSION['bilans']);
+							}		
+							unset ($_SESSION['data_poczatkowa']);
+							unset ($_SESSION['data_koncowa']);							
 							?>							
 							</p>
 						</div>
