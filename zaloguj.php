@@ -4,7 +4,7 @@
 	
 	if ((!isset($_POST['login'])) || (!isset($_POST['password'])))
 	{
-		header('Location: pierwszy-screen.php');
+		header('Location: index.php');
 		exit();
 	}
 
@@ -45,13 +45,13 @@
 				else 
 				{
 					$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło! Jeżeli nie posiadasz konta w serwisie, zarejestruj się.</span>';
-					header('Location: pierwszy-screen.php');
+					header('Location: index.php');
 				}
 				
 			} else {
 				
 				$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło! Jeżeli nie posiadasz konta w serwisie, zarejestruj się.</span>';
-				header('Location: pierwszy-screen.php');
+				header('Location: index.php');
 				
 			}
 			

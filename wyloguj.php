@@ -4,6 +4,6 @@
 	
 	session_unset();
 	
-	header('Location: pierwszy-screen.php');
+	header('Location: index.php');
 ?>
 
