@@ -151,8 +151,6 @@
 								echo  '<br><br><b>'.number_format($_SESSION['suma_przychodow'], 2).'</b>';
 								unset ($_SESSION['suma_przychodow']);
 							}
-							unset ($_SESSION['data_poczatkowa']);
-							unset ($_SESSION['data_koncowa']);
 							
 							?>							
 							</p>
