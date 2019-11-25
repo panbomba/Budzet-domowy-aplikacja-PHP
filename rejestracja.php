@@ -223,6 +223,8 @@
 								<input type="password" name="password2">
 								<br><br>								
 								<input type="submit" style="background-color: #5cb85c; color: white" value="Zarejestruj się!">
+								<br><br>		
+								<a href="index.php"><input type="button" style="color: black" value="Powrót"></a>
 							</form>								
 					</article>	
 				</div>
