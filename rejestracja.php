@@ -87,7 +87,7 @@
 						$polaczenie->query ("INSERT INTO payment_methods_assigned_to_users (user_id, name) SELECT  '$new_user_id' AS user_id, `name` FROM payment_methods_default");
 						$_SESSION['udanarejestracja']=true;
 						
-						header('Location: logowanie.php');
+						header('Location: pierwsze_logowanie.php');
 					}
 					else
 					{
