@@ -5,6 +5,10 @@
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
 
 	$okres = $_POST['okres'];
+	if($_POST['okres'] == 0)
+	{
+		$okres = $_SESSION['opcja_domyslna'];
+	}
 	
 	if($okres==1)
 	{

@@ -7,6 +7,13 @@
 		header('Location: index.php');
 		exit();
 	}
+	if((!isset($_SESSION['data_poczatkowa'])) && (!isset($_SESSION['data_poczatkowa'])))
+	{
+				$_SESSION['opcja_domyslna'] = 1;
+				header('Location: bilans.php');		
+	}
+	
+	
 
 	//unset($_SESSION['data_koncowa']);
 	//unset($_SESSION['data_poczatkowa']);
@@ -132,7 +139,9 @@
 						<div class = "tile1">
 						<h4><b>Przychody</b></h4>
 							<p>
+							
 							<?php
+							
 							if(isset($_SESSION['data_poczatkowa']))
 							{
 								echo 'Od: '.$_SESSION['data_poczatkowa'];
