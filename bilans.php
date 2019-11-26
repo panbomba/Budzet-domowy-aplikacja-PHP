@@ -51,6 +51,8 @@
 	//wydatki kategorie
 	$rezultat8 = $polaczenie->query("SELECT *, SUM(amount) FROM expenses WHERE date_of_expense BETWEEN '$data_poczatkowa' AND '$data_koncowa' AND user_id = '$user_id' GROUP BY expense_category_assigned_to_user_id");
 	
+	$_SESSION['przychody_tablica']=array(array('Task','Hours per Day'));
+
 	while ($wiersz7 = $rezultat7->fetch_assoc())
 	{
 		$numer_kategori_przychodow = (int)$wiersz7['income_category_assigned_to_user_id'];
@@ -58,7 +60,19 @@
 		$wiersz9 = $kategoria->fetch_assoc();
 		$kategorie_przychodow= '<b>'.$wiersz9['name'].' : </b>'.$wiersz7['SUM(amount)'].'<br>';
 		$_SESSION['przychody_kategorie']  .=$kategorie_przychodow;	
+		array_push($_SESSION['przychody_tablica'],$wiersz9['name'],$wiersz7['SUM(amount)']);	
 	}
+	
+//print_r($_SESSION['przychody_tablica']);
+echo $_SESSION['przychody_tablica'][0][1];
+echo '<br>';
+echo $_SESSION['przychody_tablica'][0][0];
+echo '<br>';
+echo $_SESSION['przychody_tablica'][1][0];
+echo '<br>';
+echo $_SESSION['przychody_tablica'][1][1];
+echo '<br>';
+print_r($_SESSION['przychody_tablica']);
 	
 	while ($wiersz8 = $rezultat8->fetch_assoc())
 	{

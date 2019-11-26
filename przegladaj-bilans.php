@@ -14,6 +14,7 @@
 	}
 	
 	
+	
 
 	//unset($_SESSION['data_koncowa']);
 	//unset($_SESSION['data_poczatkowa']);
@@ -160,9 +161,9 @@
 								echo  '<br><br><b>'.number_format($_SESSION['suma_przychodow'], 2).'</b>';
 								unset ($_SESSION['suma_przychodow']);
 							}
-							
 							?>							
 							</p>
+							
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -192,6 +193,39 @@
 							unset ($_SESSION['data_koncowa']);							
 							?>
 							</p>
+															<div id="piechart" align="center"></div>
+
+														<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+														<script type="text/javascript">
+														// Load google charts
+														google.charts.load('current', {'packages':['corechart']});
+														google.charts.setOnLoadCallback(drawChart);
+
+														// Draw the chart and set the chart values
+														function drawChart() {
+														  var data = google.visualization.arrayToDataTable([
+															['Kategoria', 'Kwota'],
+															['Mieszkanie', 8],
+															['Rozrywka', 3],
+															['Jedzenie', 4],
+															<?php
+																
+															?>
+
+														]);
+
+														  // Optional; add a title and set the width and height of the chart
+														  var options = {'title':'', 'width':300, 'height':250};
+
+														  // Display the chart inside the <div> element with id="piechart"
+														  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+														  chart.draw(data, options);
+														}
+														</script>							
+							
+							
+							
 						</div>
 					</div>
 						
