@@ -27,8 +27,8 @@
 	<meta http-equiv="X-UA-Compatible"  content="IE=edge" />
 	<meta name="author" content="Maciej Bombik" />
 	
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="style.css"> 
+
+	<link rel="stylesheet" href="style.css"> 	
 	<link rel="stylesheet" href="css/fontello.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:700,900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap&subset=latin-ext" rel="stylesheet">
@@ -114,8 +114,8 @@
 								  </div>
 								  <form action="bilans.php" method="post">
 								  <div class="modal-body">
-										<label>Data początkowa <input type="date" name="start"></label>
-										<label>Data końcowa <input type="date" name="end"></label>
+										<label>Data początkowa <input type="date" name="start"  value="YYYY-MM-DD"></label>
+										<label>Data końcowa <input type="date" name="end"  value="YYYY-MM-DD"></label>
 								  </div>								  
 								  <div class="modal-footer">								  
 									<button type="button" class="btn btn-danger" data-dismiss="modal">Zamknij</button>
@@ -129,7 +129,7 @@
 			<div>	<br>	
 				<div class="row">			
 					<div class="col-md-6">
-						<div class = tile1>
+						<div class = "tile1">
 						<h4><b>Przychody</b></h4>
 							<p>
 							<?php
@@ -157,7 +157,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class = tile1>
+						<div class = "tile1">
 						<h4><b>Wydatki</b></h4> 
 							<p>
 							<?php
@@ -187,7 +187,7 @@
 					</div>
 						
 					<div class="col-sm-12">
-						<div class = tile2>
+						<div class = "tile2">
 						<h4><b>Podsumowanie</b></h4>
 							<p>
 							<?php

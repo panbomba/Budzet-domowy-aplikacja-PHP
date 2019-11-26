@@ -87,7 +87,7 @@
 								<form action="przychod.php" method="post">
 									<label> Kwota    <input type="number" step="0.01" name="kwota"></label>
 										<br><br>
-									<label>Data     <input type="date" name="data_przychodu"></label>
+									<label>Data     <input type="date" name="data_przychodu" value="YYYY-MM-DD"></label>
 										<br><br>
 									<fieldset class="radio">
 										<legend>Kategoria</legend>

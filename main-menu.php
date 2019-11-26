@@ -83,17 +83,15 @@
 			<section>
 				<div class="artykul-main">
 					<article>
-						<h1>Tutaj jakis artykul wprowadzajacy albo porady</h1>
-							<p> 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel ligula sed metus luctus lobortis. Aliquam porta neque eu diam tristique, ac eleifend eros tempus. Maecenas rutrum velit eget turpis bibendum ullamcorper eget sit amet lectus. Integer id varius mi, fermentum dignissim lorem. Praesent vitae nisi eu est condimentum eleifend nec ut est. Duis vel ante vitae ex tristique accumsan. Mauris massa turpis, facilisis sed ultrices at, fermentum et arcu. Donec interdum ac lectus eu convallis.
-
-							Nullam vehicula mauris tortor, vitae varius augue dignissim vitae. Donec ex libero, imperdiet in porta et, rutrum faucibus ligula. Vestibulum placerat quis erat tempus ullamcorper. Aenean eget metus et augue dictum iaculis. Nullam eu turpis ornare, venenatis orci vitae, posuere arcu. Vivamus nunc felis, rutrum vitae elementum id, viverra tempus felis. Phasellus elit diam, congue ut urna quis, tristique semper nunc. Sed tempor erat a interdum viverra. Proin ut posuere mauris, ac pharetra massa. In tincidunt justo eu enim interdum, sed euismod diam dignissim. Cras bibendum venenatis est ut luctus. Maecenas odio eros, aliquam id orci vel, lacinia venenatis odio. 
+						<h4>
+						<?php
+						echo '<b>Witaj '.$_SESSION['user'].'!</b>'
+						?>
+						</h4>
+							<p style="text-align:center"> 
+							Cieszymy się, że spotykamy Cię w serwisie <b>moje finan$e</b>! <br>Mamy nadzieję, że twoje doświadczenie będzie pozytywne i korzystnie wpłynie na Twoją sytuację finansową.
 							</p>
-					</article>	
-					<article>
-						<h1> Tutaj w artykule jakas grafika albo zdjecie</h1>
-							<p> 
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vel ligula sed metus luctus lobortis. Aliquam porta neque eu diam tristique, ac eleifend eros tempus. Maecenas rutrum velit eget turpis bibendum ullamcorper eget sit amet lectus. Integer id varius mi, fermentum dignissim lorem. Praesent vitae nisi eu est condimentum eleifend nec ut est. Duis vel ante vitae ex tristique accumsan. Mauris massa turpis, facilisis sed ultrices at, fermentum et arcu. Donec interdum ac lectus eu convallis.
+							Zachęcamy do samodzielnego rozwijania aplikacji. Możesz ją personalizować według własnego uznania i potrzeb. <br>Dodawaj własne kategorie wydatków i przychodów, które najlepiej odzwierciedlają Twoją sytuację!
 							</p>
 					</article>	
 				</div>
