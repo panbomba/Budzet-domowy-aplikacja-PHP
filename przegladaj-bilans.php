@@ -210,7 +210,7 @@
 																	}														
 															?>
 														]);
-														  var options = {'title':'', 'width':300, 'height':250};
+														  var options = {'title':'', 'width':300, 'height':250, 'backgroundColor':'#dddddd', is3D: true,};
 														  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 														  chart.draw(data, options);
 														}
