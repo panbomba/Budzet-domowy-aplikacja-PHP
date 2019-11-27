@@ -193,39 +193,28 @@
 							unset ($_SESSION['data_koncowa']);							
 							?>
 							</p>
-															<div id="piechart" align="center"></div>
-
+														<div id="piechart" align="center"></div>
 														<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
 														<script type="text/javascript">
-														// Load google charts
 														google.charts.load('current', {'packages':['corechart']});
 														google.charts.setOnLoadCallback(drawChart);
-
-														// Draw the chart and set the chart values
 														function drawChart() {
 														  var data = google.visualization.arrayToDataTable([
 															['Kategoria', 'Kwota'],
-															['Mieszkanie', 8],
-															['Rozrywka', 3],
-															['Jedzenie', 4],
-															<?php
-																
+															<?php																						
+																	$dlugosc = count($_SESSION['wydatki_tablica']);
+																	for($i=1; $i<=$dlugosc-1; $i++)
+																	{
+																		echo"['".$_SESSION['wydatki_tablica'][$i]."', ".$_SESSION['wydatki_tablica'][$i+1]."],";
+																	$i++;
+																	}														
 															?>
-
 														]);
-
-														  // Optional; add a title and set the width and height of the chart
 														  var options = {'title':'', 'width':300, 'height':250};
-
-														  // Display the chart inside the <div> element with id="piechart"
 														  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 														  chart.draw(data, options);
 														}
-														</script>							
-							
-							
-							
+														</script>														
 						</div>
 					</div>
 						
