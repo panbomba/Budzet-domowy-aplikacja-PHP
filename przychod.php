@@ -3,6 +3,7 @@
 	session_start();
 	require_once "connect.php";
 	$polaczenie = new mysqli($host, $db_user, $db_password, $db_name);
+	$polaczenie->query("SET NAMES 'utf8'");
 
 	$kwota = $_POST['kwota']; 
 	$data_przychodu = $_POST['data_przychodu']; 

@@ -91,10 +91,10 @@
 										<br><br>
 									<fieldset class="radio">
 										<legend>Kategoria</legend>
-											<div><label><input type="radio" value="salary" name="przychod"> Wynagrodzenie</label></div>
-											<div><label><input type="radio" value="interest" name="przychod"> Odsetki bankowe</label></div>
+											<div><label><input type="radio" value="wynagrodzenie" name="przychod"> Wynagrodzenie</label></div>
+											<div><label><input type="radio" value="odsetki" name="przychod"> Odsetki bankowe</label></div>
 											<div><label><input type="radio" value="allegro" name="przychod"> Zysk ze sprzedaży w internecie</label></div>
-											<div><label><input type="radio" value="another" name="przychod"> Inne</label></div>
+											<div><label><input type="radio" value="inne" name="przychod"> Inne</label></div>
 									</fieldset>
 									<br>
 									<div><label for="komentarz">Dodatkowe komentarze</label></div>

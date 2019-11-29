@@ -11,6 +11,7 @@
 	require_once "connect.php";
 
 	$polaczenie = @new mysqli($host, $db_user, $db_password, $db_name);
+	$polaczenie->query("SET NAMES 'utf8'");
 	
 	if ($polaczenie->connect_errno!=0)
 	{
