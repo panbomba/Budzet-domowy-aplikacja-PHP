@@ -97,6 +97,20 @@ body
 	width: 60%;
 }
 
+@media (max-width: 767px)
+{
+		.artykul-main
+	{
+		margin-top: 40px;
+		margin-left: auto;
+		margin-bottom: 100px;
+		margin-right: auto;
+		text-align: center;
+		width: 90%;
+	}
+}
+
+
 .artykul-main-bilans
 {
 	margin-top: 60px;
